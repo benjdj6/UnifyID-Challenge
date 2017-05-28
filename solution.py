@@ -14,7 +14,8 @@ def getRandNum():
         'format': 'plain',
         'rnd': 'new'
     }
-    r = requests.get('https://www.random.org/integers', params=queryst)
+    header = {'user-agent': 'benjdjapps@gmail.com'}
+    r = requests.get('https://www.random.org/integers', params=queryst, timeout=60.0, headers=header)
     return r.text
 
 
@@ -23,4 +24,4 @@ def createBMP():
     return im
 
 
-print createBMP()
+print getRandNum()
