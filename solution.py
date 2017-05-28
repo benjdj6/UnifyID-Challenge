@@ -23,8 +23,18 @@ def getRandNum():
 
 
 def createBMP():
-    im = Image.new('RGB', (128, 128))
-    return im
+    img = Image.new('RGB', (128, 128), "black")
+    return img
 
 
-print getRandNum()
+def writePixels(img, pixels):
+    pixelMap = img.load()
+
+    for i in range(128):
+        for j in range(128):
+            r = pixels.pop()
+            g = pixels.pop()
+            b = pixels.pop()
+            pixelMap[i, j] = (r, g, b)
+
+    return img
