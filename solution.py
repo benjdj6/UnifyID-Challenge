@@ -14,7 +14,7 @@ low_usage = False
 
 # Check data quota of Random.org
 def checkQuota():
-    header = {'user-agent': 'benjdj6@gmail.com'}
+    header = {'user-agent': 'benjdjapps@gmail.com'}
     url = "https://www.random.org/quota"
     queryst = {
         'format': 'plain'
