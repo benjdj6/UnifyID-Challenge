@@ -1,4 +1,5 @@
 import requests
+import os, sys
 from PIL import Image
 
 # Written by Ben Johnston on May 28, 2017
@@ -15,8 +16,10 @@ def getRandNum():
         'rnd': 'new'
     }
     header = {'user-agent': 'benjdjapps@gmail.com'}
-    r = requests.get('https://www.random.org/integers', params=queryst, timeout=60.0, headers=header)
-    return r.text
+    url = "https://www.random.org/integers"
+    r = requests.get(url, params=queryst, timeout=60.0, headers=header)
+    pix = map(int, ((r.text).encode('utf-8')).split())
+    return pix
 
 
 def createBMP():
